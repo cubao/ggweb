@@ -5,7 +5,7 @@ all:
 	@echo nothing special
 
 clean:
-	rm -rf build dist wheelhouse *.egg-info
+	rm -rf build build-em dist wheelhouse *.egg-info
 force_clean:
 	docker run --rm -v `pwd`:`pwd` -w `pwd` -it alpine/make make clean
 .PHONY: clean force_clean
