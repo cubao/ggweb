@@ -25,14 +25,9 @@ dist:
 .PHONY: em_build dist
 
 DOCKER_TAG_WINDOWS ?= ghcr.io/cubao/build-env-windows-x64:v0.0.1
-DOCKER_TAG_LINUX ?= ghcr.io/cubao/build-env-manylinux2014-x64:v0.0.3
+DOCKER_TAG_LINUX ?= ghcr.io/cubao/build-env-manylinux2014-x64:v0.0.4
 DOCKER_TAG_MACOS ?= ghcr.io/cubao/build-env-macos-arm64:v0.0.1
 DOCKER_TAG_EMSDK ?= ghcr.io/cubao/build-env-emsdk:v0.0.1
-DOCKER_TAG_GGWEB ?= ghcr.io/cubao/build-env-ggweb:v0.0.1
-docker_build:
-	docker build -t $(DOCKER_TAG_GGWEB) -f Dockerfile .
-docker_push:
-	docker push $(DOCKER_TAG_GGWEB)
 
 test_in_win:
 	docker run --rm -w `pwd` -v `pwd`:`pwd` -v `pwd`/build/win:`pwd`/build -it $(DOCKER_TAG_WINDOWS) bash
