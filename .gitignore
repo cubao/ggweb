@@ -4,3 +4,4 @@ build/
 build-em/
 
 compile_commands.json
+dist
